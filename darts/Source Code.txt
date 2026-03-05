@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DartMasters Events • Soft Tip Darts for Every Occasion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap');
+        
+        :root {
+            --dart-red: #e63939;
+        }
+        
+        .tail-container {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+        
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), 
+                              url('https://picsum.photos/id/1015/1920/1080');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .dartboard-bg {
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(230, 57, 57, 0.15) 0%, transparent 70%),
+                url('https://picsum.photos/id/201/800/800');
+            background-size: cover;
+        }
+        
+        .section-header {
+            font-family: 'Press Start 2P', sans-serif;
+            text-shadow: 0 0 20px rgba(230, 57, 57, 0.5);
+        }
+        
+        .dart-card {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .dart-card:hover {
+            transform: scale(1.08) rotate(1deg);
+            box-shadow: 0 25px 50px -12px rgb(230 57 57 / 0.4);
+        }
+        
+        .bullseye {
+            position: relative;
+        }
+        
+        .bullseye::after {
+            content: '🎯';
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            font-size: 2.5rem;
+            animation: bullseye-float 3s ease-in-out infinite;
+        }
+        
+        @keyframes bullseye-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #e63939;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .price-tag {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+        }
+    </style>
+</head>
+<body class="tail-container bg-zinc-950 text-white overflow-x-hidden">
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-lg border-b border-red-900">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-3xl shadow-inner bullseye">🏹</div>
+                <div>
+                    <span class="text-3xl font-bold tracking-tighter text-white">DART<span class="text-red-500">MASTERS</span></span>
+                    <p class="text-[10px] text-red-400 -mt-1 tracking-[3px]">SOFT TIP EVENTS</p>
+                </div>
+            </div>
+            
+            <!-- Menu -->
+            <div class="hidden md:flex items-center gap-10 text-sm font-medium">
+                <a href="#about" class="nav-link text-white hover:text-red-400 transition-colors">ABOUT</a>
+                <a href="#services" class="nav-link text-white hover:text-red-400 transition-colors">SERVICES</a>
+                <a href="#pricing" class="nav-link text-white hover:text-red-400 transition-colors">PRICING</a>
+                <a href="#book" class="nav-link text-white hover:text-red-400 transition-colors">BOOK NOW</a>
+            </div>
+            
+            <a href="#book" 
+               class="px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-bold text-sm tracking-widest transition-all rounded-full flex items-center gap-2">
+                <i class="fa-solid fa-calendar"></i>
+                GET A QUOTE
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero-bg h-screen flex items-center justify-center relative">
+        <div class="max-w-5xl mx-auto text-center px-6 pt-20">
+            <div class="inline-flex items-center gap-2 bg-black/60 px-6 py-2 rounded-full mb-6 border border-red-500/30">
+                <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                <span class="text-xs tracking-[4px] uppercase font-mono text-green-400">NOW BOOKING 2026 EVENTS</span>
+            </div>
+            
+            <h1 class="text-7xl md:text-8xl font-black leading-none mb-4 tracking-tighter section-header">
+                HIT THE<br>BULLSEYE
+            </h1>
+            <p class="text-3xl md:text-4xl font-light text-red-300 mb-8 max-w-2xl mx-auto">
+                Premium soft-tip dart experiences for parties, corporate functions, weddings &amp; more
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#pricing" 
+                   class="px-12 py-5 bg-white text-zinc-950 font-bold text-xl hover:scale-105 transition-all rounded-2xl flex items-center gap-3 group">
+                    SEE PRICING
+                    <span class="text-2xl group-hover:rotate-45 transition">🏹</span>
+                </a>
+                <a href="#book" 
+                   class="px-12 py-5 border-2 border-white hover:bg-white hover:text-zinc-950 font-bold text-xl transition-all rounded-2xl">
+                    BOOK YOUR EVENT
+                </a>
+            </div>
+            
+            <div class="mt-20 text-xs flex justify-center gap-8 text-red-400">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>100% SAFE SOFT TIPS</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-truck"></i>
+                    <span>FREE SETUP &amp; TAKEDOWN</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-xs tracking-widest">
+            <span class="animate-bounce">SCROLL FOR THRILLS</span>
+            <div class="w-px h-12 bg-gradient-to-b from-transparent via-red-400 to-transparent"></div>
+        </div>
+        
+        <!-- Dart flying decoration -->
+        <div class="absolute top-20 right-10 text-8xl rotate-45 opacity-20 animate-[spin_20s_linear_infinite]">🏹</div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-24 bg-zinc-900">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <span class="px-5 py-2 bg-red-600/10 text-red-400 text-xs tracking-widest rounded-full">EST. 2020 • Central Scotland</span>
+                <h2 class="text-6xl font-bold leading-none mt-6 mb-8">We bring the <span class="text-red-500">darts</span>.<br>You bring the party.</h2>
+                <p class="text-lg text-zinc-400 leading-relaxed">
+                    DartMasters Events specialises in premium soft-tip electronic dartboard rentals and full event setups. 
+                    Safe for all ages, insanely addictive, and perfect for indoor functions of any size.
+                </p>
+                <div class="mt-10 grid grid-cols-3 gap-6 text-center">
+                    <div>
+                        <div class="text-5xl font-black text-red-500">500+</div>
+                        <div class="text-xs uppercase tracking-widest mt-1">Events hosted</div>
+                    </div>
+                    <div>
+                        <div class="text-5xl font-black text-red-500">98%</div>
+                        <div class="text-xs uppercase tracking-widest mt-1">Repeat clients</div>
+                    </div>
+                    <div>
+                        <div class="text-5xl font-black text-red-500">24</div>
+                        <div class="text-xs uppercase tracking-widest mt-1">Hour delivery</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="relative">
+                <img src="https://picsum.photos/id/201/800/600" 
+                     alt="Group enjoying soft tip darts at an event"
+                     class="rounded-3xl shadow-2xl border-8 border-red-900">
+                <div class="absolute -bottom-6 -left-6 bg-zinc-900 border border-red-500 p-6 rounded-2xl max-w-[220px]">
+                    <p class="italic text-sm">"Best entertainment we've ever had at a work function. The team is still talking about it!"</p>
+                    <p class="text-red-400 text-xs mt-4">— Sarah M., Google</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-24 dartboard-bg bg-fixed relative">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="section-header text-red-400 text-sm tracking-[6px]">WHAT WE BRING</span>
+                <h2 class="text-5xl font-bold mt-3">Everything you need for dart domination</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-black/70 backdrop-blur p-8 rounded-3xl border border-red-900/50 hover:border-red-500 transition-all">
+                    <div class="text-6xl mb-6">🎯</div>
+                    <h3 class="text-2xl font-bold mb-3">Premium Electronic Boards</h3>
+                    <p class="text-zinc-400">Latest soft-tip boards with automatic scoring, 30+ games, LED lighting &amp; tournament mode.</p>
+                </div>
+                <div class="bg-black/70 backdrop-blur p-8 rounded-3xl border border-red-900/50 hover:border-red-500 transition-all">
+                    <div class="text-6xl mb-6">🏹</div>
+                    <h3 class="text-2xl font-bold mb-3">Full Dart Arsenal</h3>
+                    <p class="text-zinc-400">Hundreds of soft-tip darts, spare tips, score sheets, dry-erase boards &amp; protective mats.</p>
+                </div>
+                <div class="bg-black/70 backdrop-blur p-8 rounded-3xl border border-red-900/50 hover:border-red-500 transition-all">
+                    <div class="text-6xl mb-6">🚚</div>
+                    <h3 class="text-2xl font-bold mb-3">White-Glove Service</h3>
+                    <p class="text-zinc-400">We deliver, set up, explain the games, and pack down. Optional MC/host available.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="py-24 bg-zinc-950">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="px-6 py-2 bg-red-600 text-white text-sm font-bold rounded-full">3 PACKAGES • ONE GOAL: MAXIMUM FUN</span>
+                <h2 class="text-6xl font-bold mt-6 section-header">Choose Your Level of Chaos</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-screen-2xl mx-auto">
+                <!-- Basic -->
+                <div class="dart-card bg-zinc-900 border border-zinc-800 rounded-3xl p-8 flex flex-col">
+                    <div class="price-tag bg-zinc-800 text-center py-2 -mt-8 mx-auto w-40 text-xs tracking-widest font-bold text-red-400">STARTER</div>
+                    <div class="mt-8 text-center">
+                        <span class="text-7xl font-black text-white">£299</span>
+                        <span class="text-zinc-500 block text-sm">/ event</span>
+                    </div>
+                    <ul class="mt-10 space-y-5 text-sm flex-1">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> 2 premium soft-tip boards</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> 24 darts + extra tips</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> 4 hours of play</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Full setup &amp; takedown</li>
+                        <li class="flex items-center gap-3 text-zinc-500"><i class="fa-solid fa-xmark"></i> LED lighting &amp; host</li>
+                    </ul>
+                    <a href="#book" class="mt-12 block text-center py-5 border-2 border-red-600 hover:bg-red-600 transition-all font-bold rounded-2xl">BOOK STARTER</a>
+                </div>
+                
+                <!-- Pro (most popular) -->
+                <div class="dart-card bg-gradient-to-b from-zinc-900 to-zinc-950 border-4 border-red-600 rounded-3xl p-8 flex flex-col relative -mt-8 md:scale-110 z-10 shadow-2xl shadow-red-900/50">
+                    <div class="absolute -top-5 right-8 bg-red-600 text-white text-xs font-bold px-10 py-2 rounded-b-2xl">MOST POPULAR</div>
+                    <div class="price-tag bg-red-600 text-center py-2 -mt-8 mx-auto w-40 text-xs tracking-widest font-bold">PARTY PRO</div>
+                    <div class="mt-8 text-center">
+                        <span class="text-7xl font-black text-white">£499</span>
+                        <span class="text-red-300 block text-sm">/ event</span>
+                    </div>
+                    <ul class="mt-10 space-y-5 text-sm flex-1">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> 4 premium boards + LED rings</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> 48 darts + accessories</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> 6 hours of play</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Digital scoring display</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Free delivery in metro areas</li>
+                    </ul>
+                    <a href="#book" class="mt-12 block text-center py-5 bg-red-600 hover:bg-red-700 transition-all font-bold rounded-2xl">BOOK PARTY PRO</a>
+                </div>
+                
+                <!-- Elite -->
+                <div class="dart-card bg-zinc-900 border border-zinc-800 rounded-3xl p-8 flex flex-col">
+                    <div class="price-tag bg-zinc-800 text-center py-2 -mt-8 mx-auto w-40 text-xs tracking-widest font-bold text-red-400">ELITE</div>
+                    <div class="mt-8 text-center">
+                        <span class="text-7xl font-black text-white">£799</span>
+                        <span class="text-zinc-500 block text-sm">/ event</span>
+                    </div>
+                    <ul class="mt-10 space-y-5 text-sm flex-1">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> 6+ boards with full lighting</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> 80+ darts &amp; pro accessories</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> 8 hours or full day</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> On-site host &amp; instructor</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Trophies + custom brackets</li>
+                    </ul>
+                    <a href="#book" class="mt-12 block text-center py-5 border-2 border-red-600 hover:bg-red-600 transition-all font-bold rounded-2xl">BOOK ELITE</a>
+                </div>
+            </div>
+            
+            <p class="text-center text-xs text-zinc-500 mt-12">* All prices include VAT • Travel fees may apply • Custom packages available</p>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="py-24 bg-zinc-900">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-black p-8 rounded-3xl">
+                    <div class="flex gap-1 text-yellow-400 mb-6">★★★★★</div>
+                    <p class="italic">"The darts were the highlight of our 50th birthday. Everyone from kids to grandparents played for hours. Professional setup and super friendly team!"</p>
+                    <div class="mt-8 flex items-center gap-4">
+                        <div class="w-10 h-10 bg-zinc-700 rounded-full"></div>
+                        <div>
+                            <div class="font-semibold">Michael Thompson</div>
+                            <div class="text-xs text-red-400">Corporate Event • 2025</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-black p-8 rounded-3xl">
+                    <div class="flex gap-1 text-yellow-400 mb-6">★★★★☆</div>
+                    <p class="italic">"Hired the Party Pro package for our wedding reception. It kept guests entertained while photos were happening. Best money we spent!"</p>
+                    <div class="mt-8 flex items-center gap-4">
+                        <div class="w-10 h-10 bg-zinc-700 rounded-full"></div>
+                        <div>
+                            <div class="font-semibold">Emma &amp; James Patel</div>
+                            <div class="text-xs text-red-400">Wedding • Nov 2025</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-black p-8 rounded-3xl">
+                    <div class="flex gap-1 text-yellow-400 mb-6">★★★★★</div>
+                    <p class="italic">"Used them for our team building day. The competitive leaderboards and host made it epic. Already booked for next quarter!"</p>
+                    <div class="mt-8 flex items-center gap-4">
+                        <div class="w-10 h-10 bg-zinc-700 rounded-full"></div>
+                        <div>
+                            <div class="font-semibold">Rachel Chen</div>
+                            <div class="text-xs text-red-400">Atlassian • 2026</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING / CONTACT -->
+    <section id="book" class="py-24 bg-black">
+        <div class="max-w-2xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="section-header text-4xl">READY TO THROW?</span>
+                <h2 class="text-5xl font-bold mt-4">Tell us about your event</h2>
+            </div>
+            
+            <form action="https://formspree.io/f/YOUR_CODE_HERE" method="POST" class="space-y-8">
+                <div class="grid grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest mb-2 text-zinc-400">Your name</label>
+                        <input type="text" name="name" required 
+                               class="w-full bg-zinc-900 border border-zinc-700 focus:border-red-500 rounded-2xl px-6 py-5 outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest mb-2 text-zinc-400">Phone</label>
+                        <input type="tel" name="phone" required 
+                               class="w-full bg-zinc-900 border border-zinc-700 focus:border-red-500 rounded-2xl px-6 py-5 outline-none transition">
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-xs uppercase tracking-widest mb-2 text-zinc-400">Event date &amp; location</label>
+                    <input type="text" name="event_details" placeholder="e.g. 15 May 2026 • Edinburgh" required
+                           class="w-full bg-zinc-900 border border-zinc-700 focus:border-red-500 rounded-2xl px-6 py-5 outline-none transition">
+                </div>
+                
+                <div class="grid grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest mb-2 text-zinc-400">Number of guests</label>
+                        <select name="guests" required 
+                                class="w-full bg-zinc-900 border border-zinc-700 focus:border-red-500 rounded-2xl px-6 py-5 outline-none transition">
+                            <option value="">Select...</option>
+                            <option value="under-20">Under 20</option>
+                            <option value="20-50">20–50</option>
+                            <option value="50-100">50–100</option>
+                            <option value="100+">100+</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest mb-2 text-zinc-400">Preferred package</label>
+                        <select name="package" required 
+                                class="w-full bg-zinc-900 border border-zinc-700 focus:border-red-500 rounded-2xl px-6 py-5 outline-none transition">
+                            <option value="">Select...</option>
+                            <option value="starter">Starter – $299</option>
+                            <option value="pro">Party Pro – $499</option>
+                            <option value="elite">Event Elite – $799</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button type="submit"
+                        class="w-full py-7 bg-red-600 hover:bg-red-700 text-xl font-bold tracking-widest transition-all rounded-3xl">
+                    SEND MY BOOKING REQUEST →
+                </button>
+            </form>
+            
+            <p class="text-center text-xs text-zinc-500 mt-8">
+                Or call us directly: <span class="text-red-400 font-medium">01234 567890</span><br>
+                We usually reply within 2 hours during business hours.
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-zinc-950 border-t border-red-900 py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex justify-center items-center gap-3 text-4xl mb-6">
+                <span>🏹</span>
+                <span class="text-5xl font-black tracking-tighter">DARTMASTERS</span>
+                <span>🎯</span>
+            </div>
+            <p class="text-xs text-zinc-500">© 2026 DartMasters Events • Soft Tip Darts Specialists</p>
+            <p class="text-[10px] text-zinc-600 mt-8">Made with ❤️ and way too many bullseyes</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Tailwind script run
+        function initializeTailwind() {
+            console.log('%c🎯 DartMasters Events website ready! Book your next event today.', 'color:#e63939; font-family:monospace');
+        }
+        window.onload = initializeTailwind;
+    </script>
+</body>
+</html>
